@@ -9,7 +9,7 @@ if [ $apikey ]; then
 	printf "Download source code" 
 	
 	# Install the DD agent from source
-	sh "$(curl -L http://dtdg.co/dd-agent-source)"
+	sh -c "$(curl -L http://dtdg.co/dd-agent-source)"
 	
 else
 	# Generate an error to prevent the Cartridge from being added
