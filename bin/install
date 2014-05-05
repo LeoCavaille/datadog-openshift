@@ -9,10 +9,7 @@ if [ $apikey ]; then
 	printf "Download source code" 
 	
 	# Install the DD agent from source
-	sh -c "$(curl -L http://dtdg.co/dd-agent-source)"
-	
-	# Set and uncomment bind_host parameter
-	sed -i "s/# bind_host:.*/bind_host: $OPENSHIFT_DATADOG_IP/" $dd_home/agent/datadog.conf
+	sh "$(curl -L http://dtdg.co/dd-agent-source)"
 	
 else
 	# Generate an error to prevent the Cartridge from being added
